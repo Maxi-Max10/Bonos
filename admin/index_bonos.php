@@ -1,3 +1,11 @@
+<?php 
+
+include_once "Model/conexion_admin.php";
+
+$consulta = "SELECT * FROM personal";
+$resultado = mysqli_query($conexion,$consulta);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,22 +53,22 @@
                                 <form id="form_crear" method="post">
                                     <div class="mb-3">
                                         <h6 class="card-title">Nombre
-                                            <input type="text" id="nombre" class="form-control" name="nombre" require value="">
+                                            <input type="text" id="nombreP" class="form-control" name="nombre" require >
                                         </h6>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">Apellido
-                                            <input type="text" id="apellido" class="form-control" name="apellido" require value="">
+                                            <input type="text" id="apellidoP" class="form-control" name="apellido" require >
                                         </h6>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">CUIL
-                                            <input type="text" id="cuil" class="form-control" name="cuil" require value="">
+                                            <input type="text" id="cuilP" class="form-control" name="cuil" require >
                                         </h6>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">Contraseña
-                                            <input type="text" id="password" class="form-control" name="password" require value="">
+                                            <input type="text" id="passwordP" class="form-control" name="password" require >
                                         </h6>
                                     </div>
                                 </form>
@@ -72,13 +80,15 @@
                         </div>
                     </div>
                 </div>
-                <table class="table mt-5 table-borderless" id="adm">
+                <table class="table mt-5 table-borderless" id="tabla_personal">
                                 <thead class="table-light">
-                                    <tr>
+                                    <tr>      
+                                        <th scope="col">#</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Apellido</th>
                                         <th scope="col">Cuil</th>
                                         <th scope="col">Contraseña</th>
+                                        <th scope="col"></th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
                                     </tr>
@@ -86,21 +96,23 @@
                                 <tbody>
                                     <tr>
                                         <?php
-                                       // while ($row = mysqli_fetch_array($query)) {
+                                       while ($row = mysqli_fetch_array($resultado)) {
 
-                                           // $arreglo = $row['idc2news_feriados'] . ',' . $row['nombre'] . ',' . $row['fecha']. ',' . $row['tipo']. ',' . $row['pais'];
+                                            $arreglo = $row['idpersonal']. ',' . $row['nombre'] . ',' . $row['apellido'] . ',' . $row['cuil']. ',' . $row['password_personal'];
                                             ?>
-                                            <td><?php ?></td>
-                                            <td><?php ?></td>
-                                            <td><?php  ?></td>
-                                            <td><?php  ?></td>
-                                            <!-- <td><button class="btn btn-principal" data-bs-toggle="modal" data-bs-target="#editar" onclick="modificar('<?php echo $arreglo ?>')">Modificar</button></td>
-                                            <td><button class="btn btn-principal" data-bs-toggle="modal" data-bs-target="#eliminar" onclick="eliminar('<?php echo $arreglo ?>')">Eliminar</button></td>
-                                       -->
+                                            <td><?php echo $row['idpersonal']; ?></td>
+                                            <td><?php echo $row['nombre']; ?></td>
+                                            <td><?php echo $row['apellido']; ?></td>
+                                            <td><?php echo $row['cuil']; ?></td>
+                                            <td><?php echo $row['password_personal']; ?></td>
+                                            <td><button class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#editar" onclick="modificar('<?php echo $arreglo ?>')">Subir Bono</button></td>
+                                             <td><button class="btn btn-outline-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editar" onclick="modificar('<?php echo $arreglo ?>')">Modificar</button></td>
+                                            <td><button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminar" onclick="eliminar('<?php echo $arreglo ?>')">Eliminar</button></td>
+                                      
                                         </tr>
                                     </tbody>    
                                     <?php
-                               // }
+                                }
                                 ?>
                             </table>
             </div>
@@ -128,28 +140,31 @@
          type: 'POST',
          data: datos,
          success: function (r) {
-         if (r == 1) {
-         Swal.fire({
-           icon: 'success',
-           title: 'Creado',
-           text: 'Creado correctamente',
-        })
-        form_crear.reset();
-         $('#agregar').modal('hide');
-         
-         } else {
-        Swal.fire({
-         icon: 'error',
-         title: 'Oops...',
-         text: 'Error en el servidor',
-        })
-         }
-       }
-    });
-        return false;
+            //alert(r);
+            if(r == '1'){
+                Swal.fire({
+                icon: 'success',
+                title: 'Creado',
+                text: 'Creado correctamente',
+                });
+                form_crear.reset();
+                $('#tabla_personal').load('index_bonos.php #tabla_personal');
+                $('#agregar').modal('hide');
+                
+            }else{
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Error en el servidor',
+                }) 
+            }
+         }      
+         });
         });
     });
 </script>
+
+
 </body>
 
 </html>
