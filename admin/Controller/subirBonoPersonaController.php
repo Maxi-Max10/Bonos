@@ -3,28 +3,32 @@
 include '../Model/conexion_admin.php';
 
 //print_r($_POST);
+$id = $_POST['id'];
 
-$id = $_POST['id_p'];
-//$fecha = $_POST['fecha'];
+if (is_array($_FILES) && count($_FILES) > 0) {
+    
+    $bono = $_FILES['arch']['name'];
+    $tipo = $_FILES['arch']['type'];
+    $temp = $_FILES['arch']['tmp_name'];
 
+    $sentencia = null;
+    $query = null;
 
-$bono = $_FILES['bono_p']['name'];
-$tipo = $_FILES['bono_p']['type'];
-$temp = $_FILES['bono_p']['tmp_name'];
-
-$sentencia = null;
-$query = null;
-
-
-    $sentencia = "INSERT INTO bonos(bonos,personal_idpersonal) 
-                  VALUES('".$bono."', '".$id."')";
-
+    $sentencia = "INSERT INTO bonos(bonos,personal_idpersonal) VALUES('".$bono."', '".$id."')";
     $query = $conexion->query($sentencia);
 
     if ($query == TRUE) {
-        move_uploaded_file($temp, './files/'.$bono);
+        move_uploaded_file($temp, 'files/'.$bono);
         echo '1';
     }
+
+} else {
+    echo '0';
+}
+
+
+
+
 
 
 ?>

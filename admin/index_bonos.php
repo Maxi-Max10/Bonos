@@ -287,7 +287,8 @@ $resultado = mysqli_query($conexion,$consulta);
     <script src="Desing/js/jquery-3.6.3.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <!--SCRIPT DE SUBIR-->
+    <!--SCRIPT DE SUBIR  falta-->
+    
     <script type="text/javascript">
     function subirBono(arreglo) {
         cadena = arreglo.split(',');
@@ -300,31 +301,45 @@ $resultado = mysqli_query($conexion,$consulta);
 
     $(document).ready(function() {
         $('#btnSubirBono').click(function() {
-            var datos = $('#from_SubirB').serialize();
+            var id = $("#id_p").val();
+            var archivo = $('#bono_p').prop('files')[0];
+
+            var formData = new FormData();
+            formData.append('arch',archivo);
+            formData.append('id',id);
+
+            //console.log(archivo);
+
             $.ajax({
                 url: "Controller/subirBonoPersonaController.php",
                 type: 'POST',
-                data: datos,
+                contentType:false,
+                processData:false,
+                data: formData,
+                
                 success: function(r) {
-                    alert(r);
+                    //alert(r);
                     if (r == '1') {
                         Swal.fire({
                             icon: 'success',
                             title: 'Subido',
-                            text: 'Subido correctamente',
+                            text: 'Archivo cargado correctamente',
                         });
-                        from_eliminar.reset();
+                        from_SubirB.reset();
                         $('#tabla_personal').load('index_bonos.php #tabla_personal');
                         $('#subir').modal('hide');
 
-                    } else {
+                    }else if (r == '0') {
                         Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Error en el servidor',
+                            icon: 'warning',
+                            title: 'Advertencia',
+                            text: 'No se a encontrado bono. Por favor carge el documento.',
                         });
+
                     }
+                    
                 }
+                
             });
         });
     });
