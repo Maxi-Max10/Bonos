@@ -32,7 +32,7 @@ $resultado = mysqli_query($conexion,$consulta);
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-item nav-link bi bi-box-arrow-left"> Login</a>
+                    <a href="#" class="nav-item nav-link bi bi-box-arrow-left"> Cerrar Sesión</a>
                 </div>
             </div>
         </div>
