@@ -35,7 +35,7 @@
             <img src="Includes/assets/user.svg" alt="login-icon" style="height: 6rem" />
         </div>
         <div class="text-center text-dark fs-5 fw-bold">BIENVENIDO ADMINISTRADOR</div>
-        <form action="Controller/loginProceso.php" method="POST">
+        <form action="Controller/loginController.php" method="POST">
             <div class="input-group mt-4">
                 <div class="input-group-text bg-dark ">
                     <img src="Includes/assets/username-icon.svg" alt="username-icon" style="height: 1rem" />
