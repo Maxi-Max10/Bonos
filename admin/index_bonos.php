@@ -286,7 +286,7 @@ $resultado = mysqli_query($conexion,$consulta);
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
     </script>
 
-    <script src="Desing/js/jquery-3.6.3.min.js"></script>
+    <script src="Includes/js/jquery-3.6.3.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--SCRIPT DE SUBIR  falta-->
