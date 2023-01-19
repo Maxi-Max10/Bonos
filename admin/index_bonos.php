@@ -18,26 +18,30 @@ $resultado = mysqli_query($conexion,$consulta);
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="card mb-2 mt-1 shadow">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h3 style="margin-top:5px">Personal</h3>
-                    </div>
+    <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth mb-3 shadow">
+        <div class="container mt-3 mb-3">
+            <a href="#" class="navbar-brand" >Administración</a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-item nav-link bi bi-box-arrow-left"> Login</a>
                 </div>
             </div>
         </div>
+    </nav>
+    <div class="container">
         <div class="container">
             <div class="row">
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="button" class="btn btn-primary mt-3 bi bi-person-plus-fill" data-bs-toggle="modal"
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3 ">
+                    <button type="button" class="btn btn-primary mt-3 bi bi-person-plus-fill rounded-pill shadow" data-bs-toggle="modal"
                         data-bs-target="#agregar"> Agregar Personal</button>
                 </div>
 
@@ -150,25 +154,23 @@ $resultado = mysqli_query($conexion,$consulta);
                                     <input type="hidden" id="id_m" name="id_m" value="">
                                     <div class="mb-3">
                                         <h6 class="card-title">Nombre
-                                            <input type="text" id="nombre_m" class="form-control" name="nombre_m"
-                                                >
+                                            <input type="text" id="nombre_m" class="form-control" name="nombre_m">
                                         </h6>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">Apellido
-                                            <input type="text" id="apellido_m" class="form-control" name="apellido_m"
-                                                >
+                                            <input type="text" id="apellido_m" class="form-control" name="apellido_m">
                                         </h6>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">CUIL
-                                            <input type="text" id="cuil_m" class="form-control" name="cuil_m" maxlength="11">
+                                            <input type="text" id="cuil_m" class="form-control" name="cuil_m"
+                                                maxlength="11">
                                         </h6>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">Contraseña
-                                            <input type="text" id="password_m" class="form-control" name="password_m"
-                                                >
+                                            <input type="text" id="password_m" class="form-control" name="password_m">
                                         </h6>
                                     </div>
                                     <input type="hidden" id="mostrar_m" name="mostrar_m" value="0">
@@ -184,8 +186,7 @@ $resultado = mysqli_query($conexion,$consulta);
 
                 <!-- MODAL SUBIR BONO PERSONA -->
 
-                <div class="modal fade" id="subir" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
+                <div class="modal fade" id="subir" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -199,18 +200,19 @@ $resultado = mysqli_query($conexion,$consulta);
                                     <div class="mb-3">
                                         <h6 class="card-title">Nombre
                                             <input type="text" id="nombre_p" class="form-control" name="nombre_p"
-                                            readonly >
+                                                readonly>
                                         </h6>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">Apellido
                                             <input type="text" id="apellido_p" class="form-control" name="apellido_p"
-                                            readonly >
+                                                readonly>
                                         </h6>
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">CUIL
-                                            <input type="text" id="cuil_p" class="form-control" name="cuil_p" maxlength="11" readonly>
+                                            <input type="text" id="cuil_p" class="form-control" name="cuil_p"
+                                                maxlength="11" readonly>
                                         </h6>
                                     </div>
                                     <div class="mb-3">
@@ -247,7 +249,7 @@ $resultado = mysqli_query($conexion,$consulta);
                 </thead>
                 <tbody>
                     <tr>
-                    <?php
+                        <?php
                             while ($row = mysqli_fetch_array($resultado)) {
 
                             $arreglo = $row['idpersonal']. ',' . $row['nombre'] . ',' . $row['apellido'] . ',' . $row['cuil']. ',' . $row['password_personal'];
@@ -257,15 +259,15 @@ $resultado = mysqli_query($conexion,$consulta);
                         <td><?php echo $row['apellido']; ?></td>
                         <td><?php echo $row['cuil']; ?></td>
                         <td><?php echo $row['password_personal']; ?></td>
-                        <td><button class="btn btn-outline-success btn-sm bi bi-file-earmark-plus-fill" data-bs-toggle="modal"
-                                data-bs-target="#subir" onclick="subirBono('<?php echo $arreglo ?>')"> Subir
-                                Bono</button></td>
+                        <td><button class="btn btn-outline-success btn-sm bi bi-file-earmark-plus-fill"
+                                data-bs-toggle="modal" data-bs-target="#subir"
+                                onclick="subirBono('<?php echo $arreglo ?>')"> Subir Bono</button></td>
                         <td><button class="btn btn-outline-warning btn-sm bi bi-pencil-square" data-bs-toggle="modal"
-                                data-bs-target="#modificar"
-                                onclick="modificar('<?php echo $arreglo ?>')"> Modificar</button></td>
+                                data-bs-target="#modificar" onclick="modificar('<?php echo $arreglo ?>')">
+                                Modificar</button></td>
                         <td><button class="btn btn-outline-danger btn-sm bi bi-person-dash-fill" data-bs-toggle="modal"
-                                data-bs-target="#eliminar"
-                                onclick="eliminar('<?php echo $arreglo ?>')"> Eliminar</button></td>
+                                data-bs-target="#eliminar" onclick="eliminar('<?php echo $arreglo ?>')">
+                                Eliminar</button></td>
 
                     </tr>
                     <?php
@@ -288,7 +290,7 @@ $resultado = mysqli_query($conexion,$consulta);
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--SCRIPT DE SUBIR  falta-->
-    
+
     <script type="text/javascript">
     function subirBono(arreglo) {
         cadena = arreglo.split(',');
@@ -305,18 +307,18 @@ $resultado = mysqli_query($conexion,$consulta);
             var archivo = $('#bono_p').prop('files')[0];
 
             var formData = new FormData();
-            formData.append('arch',archivo);
-            formData.append('id',id);
+            formData.append('arch', archivo);
+            formData.append('id', id);
 
             //console.log(archivo);
 
             $.ajax({
                 url: "Controller/subirBonoPersonaController.php",
                 type: 'POST',
-                contentType:false,
-                processData:false,
+                contentType: false,
+                processData: false,
                 data: formData,
-                
+
                 success: function(r) {
                     //alert(r);
                     if (r == '1') {
@@ -329,7 +331,7 @@ $resultado = mysqli_query($conexion,$consulta);
                         $('#tabla_personal').load('index_bonos.php #tabla_personal');
                         $('#subir').modal('hide');
 
-                    }else if (r == '0') {
+                    } else if (r == '0') {
                         Swal.fire({
                             icon: 'warning',
                             title: 'Advertencia',
@@ -337,9 +339,9 @@ $resultado = mysqli_query($conexion,$consulta);
                         });
 
                     }
-                    
+
                 }
-                
+
             });
         });
     });
