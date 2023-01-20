@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (isset($_SESSION['idadmin'])) { 
+    header('Location: index_bonos.php');
+}
+
+?>
 <!doctype html>
 <html lang="en">
 

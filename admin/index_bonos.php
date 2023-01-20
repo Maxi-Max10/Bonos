@@ -1,9 +1,20 @@
 <?php 
 
-include_once "Model/conexion_admin.php";
+session_start();
 
-$consulta = "SELECT * FROM personal";
-$resultado = mysqli_query($conexion,$consulta);
+
+if (!isset($_SESSION['idadmin'])) {
+    header('Location: login.php');
+  }elseif(isset($_SESSION['idadmin'])){
+    include_once "Model/conexion_admin.php";
+    $consulta = "SELECT * FROM personal";
+    $resultado = mysqli_query($conexion,$consulta);
+      
+  }else{
+      echo "ERROR EN EL SISTEMA";
+  }
+
+
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +43,7 @@ $resultado = mysqli_query($conexion,$consulta);
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-item nav-link bi bi-box-arrow-left"> Cerrar Sesión</a>
+                    <a href="Controller/cerrar.php" class="nav-item nav-link bi bi-box-arrow-left"> Cerrar Sesión</a>
                 </div>
             </div>
         </div>
