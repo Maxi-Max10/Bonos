@@ -1,10 +1,11 @@
 <?php
+/*
 session_start();
 
-if (isset($_SESSION['idusuario'])) {
+if (isset($_SESSION['idpersonal'])) {
   header('Location: index_usuario.php');
 }
-
+*/
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,13 +42,13 @@ if (isset($_SESSION['idusuario'])) {
   <div class="login-box">
     <img class="avatar" src="css/img/User-icon.png" alt="user icon">
     <h1>Inicio de sesión</h1>
-    <form>
+    <form action="Controller/User_login_controller.php" method="POST">
       <!-- USERNAME INPUT -->
       <label for="username">Username</label>
-      <input type="text" placeholder="Ingrese CUIL">
+      <input type="text" name="cuil" placeholder="Ingrese CUIL">
       <!-- PASSWORD INPUT -->
       <label for="password">Password</label>
-      <input type="password" placeholder="Ingrese contraseña">
+      <input type="password" name="password" placeholder="Ingrese contraseña">
       <input type="submit" value="Inicio de sesión">
       <div class="pt-1 ">
         <a href="admin/Includes/" class="text-decoration-none fw-semibold fst-italic text-light" style="font-size: 0.8rem">¿Ovidaste tu contraseña?</a>
