@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $user = "root";
 $password = "";
 $base_name = "bonos_db";
