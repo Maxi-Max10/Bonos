@@ -29,6 +29,21 @@ if (!isset($_SESSION['iduser'])) {
             <th>Acciones</th>
           </tr>
         </thead>
+        <tbody>
+                        <?php
+                            $query = "SELECT * FROM bonos";
+                            $result_tasks = mysqli_query($connexion, $query);
+
+                            while($row = mysqli_fetch_array($result_tasks)) { ?>
+                                <tr>
+                                    <td><?php echo $row['bonos'] ?></td>
+                                    <td><?php echo $row['fecha'] ?></td>
+                                    <td>
+                                        <a href="descargar_bono.php?id=<?php echo $row['id'] ?>" class="btn btn-secondary"><i class="fa-solid fa-file-arrow-down"></i></a>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                    </tbody>
       </table>
     </div>
   </div>
