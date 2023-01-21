@@ -26,7 +26,11 @@ if (isset($_SESSION['idpersonal'])) {
 
 
 <body class="bg-light d-flex justify-content-center align-items-center vh-100 ">
-  <?php
+  
+  <div class="login-box">
+    <img class="avatar" src="css/img/User-icon.png" alt="user icon">
+    <h1>Inicio de sesión</h1>
+    <?php
 
   if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'no') {
 
@@ -39,9 +43,6 @@ if (isset($_SESSION['idpersonal'])) {
   <?php
   }
   ?>
-  <div class="login-box">
-    <img class="avatar" src="css/img/User-icon.png" alt="user icon">
-    <h1>Inicio de sesión</h1>
     <form action="Controller/User_login_controller.php" method="POST">
       <!-- USERNAME INPUT -->
       <label for="username">Username</label>
