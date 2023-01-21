@@ -13,7 +13,6 @@ $sentencia =("SELECT idadmin FROM admin WHERE usuario = '".$usuario."' AND passw
 $queryBuscadm = $conexion->query($sentencia);
 $datosAd = $queryBuscadm->fetch_all();
 
-
 // print $_SESSION['id'] = $datos->id;
 if ($datosAd) {
     $_SESSION['idadmin'] = $datosAd;

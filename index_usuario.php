@@ -2,13 +2,19 @@
 
 session_start();
 
-
-if (!isset($_SESSION['iduser'])) {
+if (!isset($_SESSION['idpersonal'])) {
   header('Location: login.php');
-} elseif (isset($_SESSION['iduser'])) {
+
+} else if (isset($_SESSION['idpersonal'])) {
+
   include_once "Model/conexion_usuario.php";
-  $consulta = "SELECT * FROM personal";
-  $resultado = mysqli_query($conexion, $consulta);
+
+  $idpersonal = $_SESSION['idpersonal'];
+  
+  
+  $consultaUs = "SELECT * FROM bonos WHERE personal_idpersonal = '".$idpersonal."'";
+  $resultadoUs = mysqli_query($conexionUs, $consultaUs);
+
 } else {
   echo "ERROR EN EL SISTEMA";
 }
@@ -16,8 +22,7 @@ if (!isset($_SESSION['iduser'])) {
 
 
 ?>
-<?php include("Model/conexion_usuario.php") ?>
-<?php include("View/header.php") ?>
+<?php include "View/header.php" ?>
 <div class="container p-4">
   <div class="row">
     <div class="col-md-8">

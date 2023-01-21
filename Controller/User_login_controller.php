@@ -3,23 +3,28 @@
 session_start();
 include '../Model/conexion_usuario.php';
 
-$usuario = $_POST['usuario'];
+$cuil = $_POST['cuil'];
 $password = $_POST['password'];
 
-print_r($_POST);
+//print_r($_POST);
 
 
-$sentencia =("SELECT id_login_personal FROM login_personal WHERE cuil_login = '".$usuario."' AND password_login = '".$password."'");
-$queryBuscadm = $conexion->query($sentencia);
-$datosAd = $queryBuscadm->fetch_all();
+$sentencia =("SELECT idpersonal FROM personal WHERE cuil = '".$cuil."' AND password_personal = '".$password."'");
+$resultadoUs = mysqli_query($conexionUs, $sentencia);
 
+while ($row = mysqli_fetch_array($resultadoUs)) {
+    $idpersonal = $row['idpersonal'];
+}
+
+//echo $idpersonal;
 
 // print $_SESSION['id'] = $datos->id;
-if ($datosAd) {
-    $_SESSION['idusuario'] = $datosAd;
+
+if ($resultadoUs) {
+    $_SESSION['idpersonal'] = $idpersonal;
    header('Location: ../index_usuario.php');
 }else{
-    header('Location: ../login.php?mensaje=no'); 
+    header('Location: ../loginUs.php?mensaje=no'); 
 }
 
 ?>
