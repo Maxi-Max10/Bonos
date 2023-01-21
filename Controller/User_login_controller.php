@@ -24,7 +24,7 @@ if ($resultadoUs) {
     $_SESSION['idpersonal'] = $idpersonal;
    header('Location: ../index_usuario.php');
 }else{
-    header('Location: ../login.php?mensaje=no'); 
+    header('Location: ../loginUs.php?mensaje=no'); 
 }
 
 ?>
