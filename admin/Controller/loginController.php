@@ -11,11 +11,14 @@ print_r($_POST);
 
 $sentencia =("SELECT idadmin FROM admin WHERE usuario = '".$usuario."' AND password_admin = '".$password."'");
 $queryBuscadm = $conexion->query($sentencia);
-$datosAd = $queryBuscadm->fetch_all();
+
+while ($row = mysqli_fetch_array($queryBuscadm)) {
+    $idpersonal = $row['idpersonal'];
+}
 
 // print $_SESSION['id'] = $datos->id;
 if ($datosAd) {
-    $_SESSION['idadmin'] = $datosAd;
+    $_SESSION['idadmin'] = $idpersonal;
    header('Location: ../index_bonos.php');
 }else{
     header('Location: ../login.php?mensaje=no'); 
