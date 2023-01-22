@@ -11,14 +11,14 @@
     --card4-gradient-color2: #38ef7d;
   }
 
-body {
+.bg-verde {
     background: linear-gradient(to bottom left, var(--card4-gradient-color1), var(--card4-gradient-color2));
     height: 100vh;
   }
   
   .login-box {
-    width: 320px;
-    height: 420px;
+    width: 304px;
+    height: 462px;
     background: #000;
     color: #fff;
     top: 50%;
@@ -27,7 +27,7 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 10%;
     box-sizing: border-box;
-    padding: 70px 30px;
+    padding: 48px;
   }
   
   .login-box .avatar {
@@ -95,4 +95,6 @@ body {
   .login-box a:hover {
     color: #fff;
   }
-  
+  .altura {
+    height: 72% !important;
+  }

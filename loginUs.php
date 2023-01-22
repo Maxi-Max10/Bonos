@@ -25,41 +25,71 @@ if (isset($_SESSION['idpersonal'])) {
 </head>
 
 
-<body class="bg-light d-flex justify-content-center align-items-center vh-100 ">
-  
-  <div class="login-box">
-    <img class="avatar" src="css/img/User-icon.png" alt="user icon">
-    <h1>Inicio de sesión</h1>
-    <?php
+<body class="bg-light d-flex justify-content-center align-items-center bg-verde">
 
-  if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'no') {
+  <!-- <div class=" bg-black rounded align-middle position-absolute h-auto w-auto"> -->
 
-  ?>
-    <!-- <script>swal("Error!", "Email invalido!", "error");</script> -->
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <strong>Error!</strong> Por favor ingrese un usuario y contraseña válidos.
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <?php
+
+if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'no') {
+
+?>
+<!-- <script>swal("Error!", "Email invalido!", "error");</script> -->
+
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Error!</strong> Por favor ingrese un usuario y contraseña válidos.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<?php
+}
+?>
+  <div class=" login-box">
+    <div>
+      <!-- <img class="h-25 w-25 position-absolute top-0 start-50 translate-middle" src="css/img/User-icon.png" alt="user icon"> -->
+      <img class="avatar" src="css/img/User-icon.png" alt="user icon">
     </div>
-  <?php
-  }
-  ?>
-    <form action="Controller/User_login_controller.php" method="POST">
+    <h1>
+      Inicio de sesión
+    </h1>
+
+     <!-- <form class="d-flex flex-column p-5" action="Controller/User_login_controller.php" method="POST">  -->
+     <form action="Controller/User_login_controller.php" method="POST"> 
+
       <!-- USERNAME INPUT -->
-      <label for="username">Username</label>
+      <label class="text-light"for="username">Username</label>
       <input type="text" name="cuil" placeholder="Ingrese CUIL">
       <!-- PASSWORD INPUT -->
-      <label for="password">Password</label>
+      <label class="text-light"for="password">Password</label>
       <input type="password" name="password" placeholder="Ingrese contraseña">
       <input type="submit" value="Inicio de sesión">
       <div class="pt-1 ">
-        <a href="admin/Includes/" class="text-decoration-none fw-semibold fst-italic text-light" style="font-size: 0.8rem">¿Ovidaste tu contraseña?</a>
-        <br>
-        <a href="#" class="text-decoration-none fw-semibold fst-italic text-light" style="font-size: 0.8rem">¿No tienes cuenta?</a>
+        <a href="Controller/user_recupera.php" class="text-decoration-none fw-semibold fst-italic text-light" style="font-size: 0.8rem">¿Ovidaste tu contraseña?</a>
       </div>
     </form>
+    <?php
+
+    if (isset($_GET['alerta']) && $_GET['alerta'] == 'si') {
+
+    ?>
+      <!-- Alerta olvidó contraseña -->
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <strong>¡Atención!</strong> Por favor contactese con el administrador para recuperar su contraseña.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <?php
+    }
+    ?>
+
   </div>
   <!-- Bootstrap JavaScript Libraries -->
   <!-- SCRIPTS -->
+  <!-- Script popover -->
+  <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    })
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>

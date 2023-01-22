@@ -5,7 +5,7 @@ include '../Model/conexion_admin.php';
 //print_r($_POST);
 $id = $_POST['id'];
 
-if (is_array($_FILES) && count($_FILES) > 0) {
+if (is_array($_FILES) && count($_FILES) > 0 && $_FILES['arch']['type'] == "application/pdf" ) {
     
     $bono = $_FILES['arch']['name'];
     $tipo = $_FILES['arch']['type'];

@@ -24,13 +24,14 @@ if (!isset($_SESSION['idadmin'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BONOS | Administrador</title>
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/estilos.css">
 
 </head>
 
@@ -48,7 +49,7 @@ if (!isset($_SESSION['idadmin'])) {
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div class="container altura">
         <div class="container">
             <div class="row">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3 ">
@@ -228,7 +229,7 @@ if (!isset($_SESSION['idadmin'])) {
                                     </div>
                                     <div class="mb-3">
                                         <h6 class="card-title">Bono
-                                            <input type="file" id="bono_p" class="form-control" name="bono_p">
+                                            <input type="file" accept="application/pdf" id="bono_p" class="form-control" name="bono_p">
                                         </h6>
                                     </div>
                                     <input type="hidden" id="mostrar_p" name="mostrar_p" value="0">
@@ -244,7 +245,7 @@ if (!isset($_SESSION['idadmin'])) {
 
             </div>
         </div>
-        <div class="table-responsive">
+        <div class="table-responsive altura">
             <table class="mt-4 table table-striped table-hover" id="tabla_personal">
                 <thead class="table-dark">
                     <tr>
@@ -288,6 +289,31 @@ if (!isset($_SESSION['idadmin'])) {
             </table>
         </div>
     </div>
+    <!--  footer -->
+<footer>
+<div class="text-bg-dark p-3 bottom-0 end-0 text-center">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12 ">
+            <div class="display-6">
+               <h3> <strong class="multi"> POLO POSITIVO</strong><br>
+                  Investigación y Desarrollo Tecnológico
+               </h3>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="copyright">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <p>Copyright 2023 All Right Reserved By POLO POSITIVO</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -346,7 +372,7 @@ if (!isset($_SESSION['idadmin'])) {
                         Swal.fire({
                             icon: 'warning',
                             title: 'Advertencia',
-                            text: 'No se a encontrado bono. Por favor carge el documento.',
+                            text: 'No se a encontrado bono o no es el tipo correcto de archivo. Por favor carge el documento nuevamente.',
                         });
 
                     }

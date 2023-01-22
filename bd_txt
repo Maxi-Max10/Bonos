@@ -23,7 +23,7 @@ USE `bonos_db` ;
 CREATE TABLE IF NOT EXISTS `bonos_db`.`admin` (
   `idadmin` INT(11) NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password_admin` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idadmin`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -40,18 +40,6 @@ CREATE TABLE IF NOT EXISTS `bonos_db`.`bonos` (
   PRIMARY KEY (`id_bonos`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 4
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `bonos_db`.`login_personal`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `bonos_db`.`login_personal` (
-  `id_login_personal` INT(11) NOT NULL AUTO_INCREMENT,
-  `cuil_login` VARCHAR(45) NOT NULL,
-  `password_login` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_login_personal`))
-ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
