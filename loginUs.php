@@ -1,11 +1,11 @@
 <?php
-/*
+
 session_start();
 
 if (isset($_SESSION['idpersonal'])) {
   header('Location: index_usuario.php');
 }
-*/
+
 ?>
 <!doctype html>
 <html lang="en">
