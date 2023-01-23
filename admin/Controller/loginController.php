@@ -13,9 +13,6 @@ $sentencia =("SELECT idadmin FROM admin WHERE usuario = '".$usuario."' AND passw
 $queryBuscadm = $conexion->query($sentencia);
 $datosAd = $queryBuscadm->fetch_all();
 
-while ($row = mysqli_fetch_array($queryBuscadm)) {
-    $idpersonal = $row['idpersonal'];
-}
 
 // print $_SESSION['id'] = $datos->id;
 if ($datosAd) {
