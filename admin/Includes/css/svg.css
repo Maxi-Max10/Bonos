@@ -1,0 +1,24 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+
+
+.info {
+  color: white;
+  font:1em/1 sans-serif;
+  text-align: center;
+}
+
+.info a{
+  color: white;
+}
+
+svg{
+  width: 200px;
+  height: 35px;
+  display: block;
+  position: relative;
+  overflow: hidden; 
+  margin: 0 auto;
+  background: #121212;
+}

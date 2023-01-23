@@ -62,8 +62,8 @@ if (isset($_SESSION['idadmin'])) {
             <div class="d-grid gap-2 mb-">
                 <button type="submit" class="btn btn-dark mt-5 text-white rounded-pill" >Iniciar Sesión</button>
                 <div class="pt-1 ">
-                    <a href="recuperar.php" class="text-decoration-none fw-semibold fst-italic text-dark"
-                        style="font-size: 0.8rem">¿Ovidaste tu contraseña?</a>
+                   <!-- <a href="recuperar.php" class="text-decoration-none fw-semibold fst-italic text-dark"
+                        style="font-size: 0.8rem">¿Ovidaste tu contraseña?</a> -->
                 </div>
             </div>
         </form>
