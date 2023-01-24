@@ -33,12 +33,14 @@ if (!isset($_SESSION['idadmin'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--<link rel="stylesheet" href="Includes/css/style.css">-->
     <link rel="stylesheet" href="Includes/css/svg.css">
+
+    <link href="Includes/assets/favicon.ico" rel="icon">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth mb-3 shadow">
         <div class="container mt-3 mb-3">
-            <a href="#" class="navbar-brand" >Administración</a>
+            <a href="#" class="navbar-brand" ><img class="" src="Includes/assets/logo gif.gif" width="35"> Administración</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>

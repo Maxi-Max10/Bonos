@@ -23,7 +23,7 @@ if (!isset($_SESSION['idpersonal'])) {
 <?php include "View/header.php" ?>
 <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth mb-3 shadow">
     <div class="container mt-3 mb-3">
-        <a href="#" class="navbar-brand">Bonos de Sueldo</a>
+        <a href="#" class="navbar-brand"><img class="" src="img/logo gif.gif" width="35"> Bonos de Sueldo</a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
