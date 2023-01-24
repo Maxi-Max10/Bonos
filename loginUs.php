@@ -46,7 +46,7 @@ if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'no') {
   <div class=" login-box">
     <div>
       <!-- <img class="h-25 w-25 position-absolute top-0 start-50 translate-middle" src="css/img/User-icon.png" alt="user icon"> -->
-      <img class="avatar" src="css/img/User-icon.png" alt="user icon">
+      <img class="avatar" src="admin/Includes/assets/user.svg" alt="user icon">
     </div>
     <h1>
       Inicio de sesión
