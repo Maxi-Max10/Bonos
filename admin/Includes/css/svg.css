@@ -14,7 +14,7 @@
 }
 
 svg{
-  width: 200px;
+  width: 250px;
   height: 35px;
   display: block;
   position: relative;
@@ -72,3 +72,7 @@ footer {
         .ftco-footer-social li a:hover {
           color: #fff; }
     
+text {
+  font-size: 80px !important;
+  width: 500P !important;
+}

@@ -85,7 +85,7 @@
             </filter>
         </defs>
     <g>
-        <text x="0" y="100">Polo Positivo</text>
+        <text x="0" y="100" style="font-size: 80px !important;">Polo Positivo</text>
     </g>
     </svg>
     </a></h2>
