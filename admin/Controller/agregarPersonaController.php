@@ -33,13 +33,4 @@ if ($nombre == "" || $apellido == "" || $cuil == "" || $password == "") {
     }
 }
 
-
-
-    
-    
-
-
-
-
-
 ?>
