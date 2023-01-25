@@ -56,6 +56,6 @@ if ($nr == 1 ) {
 	}
 } 
 else{
-	echo "<script> alert('Ese cuil no corresponde a un usuario, revise')";
+	echo "<script> alert('Ese cuil no corresponde a un usuario, revise');window.location= '../loginUs.php' </script>";
 }
 ?>
