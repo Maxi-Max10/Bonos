@@ -46,7 +46,7 @@ if ($nr == 1 ) {
 		//Content
 		$mail->isHTML(true);                                  //Set email format to HTML
 		$mail->Subject = 'Recuperación de contraseña';
-		$mail->Body    = '<h1 align=center> Usuario:'.$cuil.'<br>Aquí está su contraseña: ' . $enviarpass.'</h1>';
+		$mail->Body    = '<h1 align=center> Usuario:'.$cuil.'<br>Aqu&iacute; está su contraseña: ' . $enviarpass.'</h1>';
 		// $mail->AltBody = $mensaje;
 
 		$mail->send();
