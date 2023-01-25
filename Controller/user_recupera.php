@@ -45,7 +45,7 @@ if ($nr == 1 ) {
 
 		//Content
 		$mail->isHTML(true);                                  //Set email format to HTML
-		$mail->Subject = '<Strong>Recuperaci&oacute;n de contrase&ntilde;a</strong>';
+		$mail->Subject = 'Recuperacion de contrasenia';
 		$mail->Body    = '<h1 align=center> Usuario:'.$cuil.'<br>Aqu&iacute; está su contrase&ntilde;a: ' . $enviarpass.'</h1>';
 		// $mail->AltBody = $mensaje;
 
