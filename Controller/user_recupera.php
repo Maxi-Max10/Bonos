@@ -45,7 +45,7 @@ if ($nr == 1 ) {
 
 		//Content
 		$mail->isHTML(true);                                  //Set email format to HTML
-		$mail->Subject = 'Recuperaci&oacute;n de contrase&ntilde;a';
+		$mail->Subject = '<Strong>Recuperaci&oacute;n de contrase&ntilde;a</strong>';
 		$mail->Body    = '<h1 align=center> Usuario:'.$cuil.'<br>Aqu&iacute; está su contrase&ntilde;a: ' . $enviarpass.'</h1>';
 		// $mail->AltBody = $mensaje;
 
@@ -54,5 +54,8 @@ if ($nr == 1 ) {
 	} catch (Exception $e) {
 		echo "<script> alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}')";
 	}
+} 
+else{
+	echo "<script> alert('Ese cuil no corresponde a un usuario, revise')";
 }
 ?>
