@@ -37,8 +37,8 @@ if (!isset($_SESSION['idadmin'])) {
     <script src="Includes/js/scrollreveal.js"></script>
 </head>
 
-<body class="animac">
-    <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth mb-3 shadow">
+<body class="">
+    <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth mb-3 shadow animac">
         <div class="container mt-3 mb-3">
             <a href="#" class="navbar-brand" ><img class="" src="Includes/assets/logo gif.gif" width="35"> Administración</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -51,7 +51,7 @@ if (!isset($_SESSION['idadmin'])) {
             </div>
         </div>
     </nav>
-    <div class="container altura mb-5">
+    <div class="container altura mb-5 animac">
         <div class="container">
             <div class="row">
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3 ">
@@ -295,7 +295,7 @@ if (!isset($_SESSION['idadmin'])) {
     </div>
     
     <!--  footer -->
-    <footer class="footer-07 mt-5">
+    <footer class="footer-07 mt-5 animac">
     <div class="container">
     <div class="row justify-content-center">
     <div class="col-md-12 text-center">
@@ -409,8 +409,12 @@ if (!isset($_SESSION['idadmin'])) {
     </script>
 
     <script src="Includes/js/jquery-3.6.3.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
     <script src="Includes/js/index.js"></script>
+
+    <!-- sweetalert -->
+    <script src="Includes/js/sweetalert.js"></script>
+
     <!--SCRIPT DE SUBIR  falta-->
 
     <script type="text/javascript">
@@ -610,14 +614,7 @@ if (!isset($_SESSION['idadmin'])) {
                             text: 'Cuil inválido',
                         });
 
-                    } else if (r == 'cuilM') {
-                        Swal.fire({
-                            icon: 'warning',
-                            title: 'Advertencia',
-                            text: 'El cuil ingresado ya se encuentra registrado',
-                        });
-
-                    } else  if (r == '1') {
+                    } else if (r == '1') {
                         Swal.fire({
                             icon: 'success',
                             title: 'Modificado',

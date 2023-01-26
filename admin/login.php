@@ -25,7 +25,11 @@ if (isset($_SESSION['idadmin'])) {
   
 <body class="bg-light d-flex justify-content-center align-items-center vh-100 ">
     <div class="bg-white p-5 rounded-5 text-secondary shadow " style="width: 25rem">
-            <?php
+        <div class="d-flex justify-content-center">
+        <img class="" src="Includes/assets/GASOPEN S.A.S (1).gif" style="height: 10rem" />
+        </div>
+        <div class="text-center text-dark fs-5 fw-bold">BIENVENIDO ADMINISTRADOR</div>
+        <?php
                
                 if (isset($_GET['mensaje']) && $_GET['mensaje'] == 'no'){ 
                                                      
@@ -38,11 +42,6 @@ if (isset($_SESSION['idadmin'])) {
             <?php
               }
             ?>
-
-        <div class="d-flex justify-content-center">
-        <img class="" src="Includes/assets/GASOPEN S.A.S (1).gif" style="height: 10rem" />
-        </div>
-        <div class="text-center text-dark fs-5 fw-bold">BIENVENIDO ADMINISTRADOR</div>
         <form action="Controller/loginController.php" method="POST">
             <div class="input-group mt-4">
                 <div class="input-group-text bg-dark ">
@@ -58,7 +57,6 @@ if (isset($_SESSION['idadmin'])) {
                 <input class="form-control bg-light border border-dark" type="password" placeholder="Contraseña" name="password"
                     autocomplete="none" />
             </div>
-            
             <div class="d-grid gap-2 mb-">
                 <button type="submit" class="btn btn-dark mt-5 text-white rounded-pill" >Iniciar Sesión</button>
                 <div class="pt-1 ">

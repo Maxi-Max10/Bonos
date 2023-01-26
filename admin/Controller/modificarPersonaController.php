@@ -21,10 +21,7 @@ if ($nombreM == "" || $apellidoM == "" || $cuilM == "" || $passwordM == "") {
 }else if (!is_numeric($cuilM)) {
     echo 'cuilNM';
 
-}else if ($datosM) {
-    echo 'cuilM';
-
-} else{
+}else {
 
     $sentenciaM = "UPDATE personal SET nombre = '".$nombreM."', apellido = '".$apellidoM."' , cuil = '".$cuilM."', password_personal = '".$passwordM."' WHERE idpersonal = '".$id_m."'";
     
