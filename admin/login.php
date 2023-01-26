@@ -40,7 +40,11 @@ if (isset($_SESSION['idadmin'])) {
             ?>
 
         <div class="d-flex justify-content-center">
+<<<<<<< HEAD
         <img class="" src="Includes/assets/GASOPEN S.A.S (1).gif" style="height: 10rem" />
+=======
+            <img src="Includes/assets/logo gif.gif" alt="login-icon" style="height: 10rem" />
+>>>>>>> 9b323ecd442434cafa4ec0ef7e83bde9b89ca935
         </div>
         <div class="text-center text-dark fs-5 fw-bold">BIENVENIDO ADMINISTRADOR</div>
         <form action="Controller/loginController.php" method="POST">
