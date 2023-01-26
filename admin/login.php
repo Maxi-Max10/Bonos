@@ -56,7 +56,7 @@ if (isset($_SESSION['idadmin'])) {
             ?>
 
         <div class="d-flex justify-content-center">
-            <img src="Includes/assets/user.svg" alt="login-icon" style="height: 6rem" />
+            <img src="Includes/assets/logo gif.gif" alt="login-icon" style="height: 10rem" />
         </div>
         <div class="text-center text-dark fs-5 fw-bold">BIENVENIDO ADMINISTRADOR</div>
         <form action="Controller/loginController.php" method="POST">
