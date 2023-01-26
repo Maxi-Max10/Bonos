@@ -75,7 +75,7 @@ if (isset($_SESSION['idpersonal'])) {
       <label class="text-light" for="username">Usuario</label>
       <input type="text" name="cuil" placeholder="Ingrese CUIL">
       <!-- PASSWORD INPUT -->
-      <label class="text-light" for="password">Contrase</label>
+      <label class="text-light" for="password">Contraseña</label>
       <input type="password" name="password" placeholder="Ingrese contraseña">
       <input type="submit" value="Inicio de sesión">
       <div class="pt-1 ">
