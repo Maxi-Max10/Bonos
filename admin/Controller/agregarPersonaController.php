@@ -18,6 +18,9 @@ $datos = $queryBuscCuil->fetch_all();
 if ($nombre == "" || $apellido == "" || $cuil == "" || $password == "") {
     echo 'vacios';
 
+} else if (!is_numeric($cuil)) {
+    echo 'cuilN';
+
 } else if ($datos) {
     echo 'cuil';
 

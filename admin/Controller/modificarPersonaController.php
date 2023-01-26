@@ -8,8 +8,8 @@ $nombreM = $_POST['nombre_m'];
 $apellidoM = $_POST['apellido_m'];
 $cuilM = $_POST['cuil_m'];
 $passwordM = $_POST['password_m'];
-$sentencia = null;
-$query = null;
+$sentenciaM = null;
+$queryM = null;
 
 $buscCuitM = "SELECT cuil FROM personal WHERE cuil = '".$cuilM."'";
 $queryBuscCuilM = $conexion->query($buscCuitM);
@@ -17,6 +17,12 @@ $datosM = $queryBuscCuilM->fetch_all();
 
 if ($nombreM == "" || $apellidoM == "" || $cuilM == "" || $passwordM == "") {
     echo 'vaciosM';
+
+}else if (!is_numeric($cuilM)) {
+    echo 'cuilNM';
+
+}else if ($datosM) {
+    echo 'cuilM';
 
 } else{
 

@@ -24,7 +24,7 @@ if (!isset($_SESSION['idadmin'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BONOS | Administrador</title>
+    <title>Gasopen S.A.S | Administración</title>
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -33,27 +33,11 @@ if (!isset($_SESSION['idadmin'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--<link rel="stylesheet" href="Includes/css/style.css">-->
     <link rel="stylesheet" href="Includes/css/svg.css">
-
-    <link rel="apple-touch-icon" sizes="57x57" href="includes/assets/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="includes/assets/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="includes/assets/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="includes/assets/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="includes/assets/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="includes/assets/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="includes/assets/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="includes/assets/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="includes/assets/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="includes/assets/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="includes/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="includes/assets/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="includes/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link href="Includes/assets/gasIcon.ico" rel="shortcut icon" type="image/x-icon">
+    <script src="Includes/js/scrollreveal.js"></script>
 </head>
 
-<body>
+<body class="animac">
     <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth mb-3 shadow">
         <div class="container mt-3 mb-3">
             <a href="#" class="navbar-brand" ><img class="" src="Includes/assets/logo gif.gif" width="35"> Administración</a>
@@ -426,7 +410,7 @@ if (!isset($_SESSION['idadmin'])) {
 
     <script src="Includes/js/jquery-3.6.3.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="Includes/js/index.js"></script>
     <!--SCRIPT DE SUBIR  falta-->
 
     <script type="text/javascript">
@@ -462,7 +446,7 @@ if (!isset($_SESSION['idadmin'])) {
                     if (r == '1') {
                         Swal.fire({
                             icon: 'success',
-                            title: 'Subido',
+                            title: 'Cargado',
                             text: 'Archivo cargado correctamente',
                         });
                         from_SubirB.reset();
@@ -508,6 +492,13 @@ if (!isset($_SESSION['idadmin'])) {
                             icon: 'warning',
                             title: 'Advertencia',
                             text: 'El cuil ingresado ya se encuentra registrado',
+                        });
+
+                    } else if (r == 'cuilN') {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Advertencia',
+                            text: 'Cuil inválido',
                         });
 
                     } else if (r == '1') {
@@ -612,7 +603,21 @@ if (!isset($_SESSION['idadmin'])) {
                             text: 'Existen campos vacíos',
                         });
 
-                    } else if (r == '1') {
+                    } else if (r == 'cuilNM') {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Advertencia',
+                            text: 'Cuil inválido',
+                        });
+
+                    } else if (r == 'cuilM') {
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Advertencia',
+                            text: 'El cuil ingresado ya se encuentra registrado',
+                        });
+
+                    } else  if (r == '1') {
                         Swal.fire({
                             icon: 'success',
                             title: 'Modificado',
