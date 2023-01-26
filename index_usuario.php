@@ -45,7 +45,7 @@ if (!isset($_SESSION['idpersonal'])) {
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-light">
                     <?php
                     while ($row = mysqli_fetch_array($resultadoUs)) { ?>
                         <tr>
