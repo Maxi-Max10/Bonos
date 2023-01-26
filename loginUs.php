@@ -52,7 +52,7 @@ if (isset($_SESSION['idpersonal'])) {
   ?>
     <!-- <script>swal("Error!", "Email invalido!", "error");</script> -->
 
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show fixed-bottom" role="alert">
       <strong>Error!</strong> Por favor ingrese un usuario y contraseña válidos.
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -72,10 +72,10 @@ if (isset($_SESSION['idpersonal'])) {
     <form action="Controller/User_login_controller.php" method="POST">
 
       <!-- USERNAME INPUT -->
-      <label class="text-light" for="username">Username</label>
+      <label class="text-light" for="username">Usuario</label>
       <input type="text" name="cuil" placeholder="Ingrese CUIL">
       <!-- PASSWORD INPUT -->
-      <label class="text-light" for="password">Password</label>
+      <label class="text-light" for="password">Contrase</label>
       <input type="password" name="password" placeholder="Ingrese contraseña">
       <input type="submit" value="Inicio de sesión">
       <div class="pt-1 ">
