@@ -110,6 +110,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8f914819e1.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+let temp = $("#btn1").clone();
+$("#btn1").click(function(){
+    $("#btn1").after(temp);
+});
+
+$(document).ready(function(){
+    var table = $('#tabla_personal').DataTable({
+       orderCellsTop: true,
+       fixedHeader: true 
+    });
+
+    //Creamos una fila en el head de la tabla y lo clonamos para cada columna
+    $('#tabla_personal thead tr').clone(true).appendTo( '#example thead' );
+
+    $('#tabla_personal thead tr:eq(1) th').each( function (i) {
+        var title = $(this).text(); //es el nombre de la columna
+        $(this).html( '<input type="text" placeholder="Search...'+title+'" />' );
+ 
+        $( 'input', this ).on( 'keyup change', function () {
+            if ( table.column(i).search() !== this.value ) {
+                table
+                    .column(i)
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );   
+});
+
+
+ 
+
+</script>
 </body>
 
 </html>
