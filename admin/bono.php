@@ -296,6 +296,7 @@ if (!isset($_SESSION['idadmin'])) {
                             icon: 'success',
                             title: 'Eliminado',
                             text: 'Eliminado correctamente',
+                            showConfirmButton: false
                         });
                         setTimeout(function(){
                             window.location.href= "Home";}, 1500); 

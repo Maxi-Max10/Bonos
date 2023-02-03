@@ -32,7 +32,7 @@ if (!isset($_SESSION['idadmin'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <!--<link rel="stylesheet" href="Includes/css/style.css">-->
     <link rel="stylesheet" href="Includes/css/svg.css">
-    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.13.2/datatables.min.css"/>
     <script src="Includes/js/scrollreveal.js"></script>
 
     <!-- ICON -->
@@ -72,8 +72,8 @@ if (!isset($_SESSION['idadmin'])) {
     <div class="container altura mb-5 animac">
         <div class="container">
             <div class="row">
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3 ">
-                    <button type="button" class="btn btn-primary mt-3 bi bi-person-plus-fill rounded-pill shadow" data-bs-toggle="modal"
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3 mb-4">
+                    <button type="button" class="btn btn-primary mt-3  bi bi-person-plus-fill rounded-pill shadow" data-bs-toggle="modal"
                         data-bs-target="#agregar"> Agregar Personal</button>
                 </div>
 
@@ -265,19 +265,19 @@ if (!isset($_SESSION['idadmin'])) {
 
             </div>
         </div>
-        <div class="table-responsive altura mb-5">
+        <div class="table-responsive altura mt-4 mb-5">
             <table class="mt-4 table table-striped table-hover" id="tabla_personal">
                 <thead class="table-dark">
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Cuil</th>
-                        <th scope="col">Contraseña</th>
-                        <th class="text-center" scope="col">Ver Bonos</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
+                        <th class="centered">#</th>
+                        <th class="centered">Nombre</th>
+                        <th class="centered">Apellido</th>
+                        <th class="centered">Cuil</th>
+                        <th class="centered">Contraseña</th>
+                        <th class="centered" >Ver Bonos</th>
+                        <th class="centered"></th>
+                        <th class="centered"></th>
+                        <th class="centered"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -435,6 +435,11 @@ if (!isset($_SESSION['idadmin'])) {
     <script src="Includes/js/jquery-3.6.3.min.js"></script>
     <!--<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
     <script src="Includes/js/index.js"></script>
+
+    <script src="Includes/js/main.js"></script>
+ 
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.2/datatables.min.js"></script>
+
 
     <!-- sweetalert -->
     <script src="Includes/js/sweetalert.js"></script>
