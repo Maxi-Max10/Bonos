@@ -11,7 +11,7 @@ if (!isset($_SESSION['idpersonal'])) {
     $idpersonal = $_SESSION['idpersonal'];
 
 
-    $consultaUs = "SELECT * FROM bonos WHERE personal_idpersonal = '" . $idpersonal . "'";
+    $consultaUs = "SELECT * FROM bonos WHERE personal_idpersonal = '".$idpersonal."'";
     $resultadoUs = mysqli_query($conexionUs, $consultaUs);
 } else {
     echo "ERROR EN EL SISTEMA";

@@ -269,15 +269,15 @@ if (!isset($_SESSION['idadmin'])) {
             <table class="mt-4 table table-striped table-hover" id="tabla_personal">
                 <thead class="table-dark">
                     <tr>
-                        <th class="centered">#</th>
-                        <th class="centered">Nombre</th>
-                        <th class="centered">Apellido</th>
-                        <th class="centered">Cuil</th>
-                        <th class="centered">Contraseña</th>
-                        <th class="centered" >Ver Bonos</th>
-                        <th class="centered"></th>
-                        <th class="centered"></th>
-                        <th class="centered"></th>
+                        <th class="col">#</th>
+                        <th class="col">Nombre</th>
+                        <th class="col">Apellido</th>
+                        <th class="col">Cuil</th>
+                        <th class="col">Contraseña</th>
+                        <th class=" text-center" >Ver Bonos</th>
+                        <th class="col"></th>
+                        <th class="col"></th>
+                        <th class="col"></th>
                     </tr>
                 </thead>
                 <tbody>

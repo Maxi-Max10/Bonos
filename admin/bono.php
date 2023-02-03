@@ -12,7 +12,7 @@ if (!isset($_SESSION['idadmin'])) {
         $nomb = $_POST['nomb'];
         $apell = $_POST['apell'];
         $cui = $_POST['cui'];
-        $consultaB = "SELECT * FROM bonos WHERE personal_idpersonal = '".$idP."'";
+        $consultaB = "SELECT * FROM bonos WHERE personal_idpersonal = '".$idP."' order by id_bonos desc";
         $resultadoB = mysqli_query($conexion,$consultaB);
           
       }else{
@@ -68,8 +68,9 @@ if (!isset($_SESSION['idadmin'])) {
 <body class="">
     <nav class="navbar navbar-expand-lg navbar-ligth bg-ligth mb-3 shadow">
         <div class="container mt-3 mb-3">
-            <a href="#" class="navbar-brand"><img class="" src="Includes/assets/logo gif.gif" width="35">
+            <a class="navbar-brand"><img class="" src="Includes/assets/logo gif.gif" width="35">
                 Administración</a>
+                <a href="Home" class="navbar-brand">Volver</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -127,7 +128,7 @@ if (!isset($_SESSION['idadmin'])) {
         </div>
         <div class="table-responsive mt-2 mb-5">
             <table class="mt-4 table table-striped table-hover" id="tabla_bono">
-                <thead class="table-dark">
+                <thead class="table-info">
                     <tr>
                         <th scope="col">#</th>
                         <th class="" scope="col">Bonos</th>
