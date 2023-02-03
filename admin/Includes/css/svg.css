@@ -24,9 +24,12 @@ svg{
 }
 
 footer {
-  padding: 2em 0; }
+  padding: 2em 0; 
+  margin-top: 300px;
+}
 
 .footer-07 {
+  margin-top: 300px;
   background: #121212; }
   .footer-07 a {
     color: #a3de83; }

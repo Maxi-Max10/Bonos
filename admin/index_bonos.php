@@ -274,6 +274,7 @@ if (!isset($_SESSION['idadmin'])) {
                         <th scope="col">Apellido</th>
                         <th scope="col">Cuil</th>
                         <th scope="col">Contraseña</th>
+                        <th class="text-center" scope="col">Ver Bonos</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
@@ -285,12 +286,22 @@ if (!isset($_SESSION['idadmin'])) {
                             while ($row = mysqli_fetch_array($resultado)) {
 
                             $arreglo = $row['idpersonal']. ',' . $row['nombre'] . ',' . $row['apellido'] . ',' . $row['cuil']. ',' . $row['password_personal'];
+                            
                         ?>
                         <td><?php echo $row['idpersonal']; ?></td>
                         <td><?php echo $row['nombre']; ?></td>
                         <td><?php echo $row['apellido']; ?></td>
                         <td><?php echo $row['cuil']; ?></td>
                         <td><?php echo $row['password_personal']; ?></td>
+                        <td class="text-center">
+                            <form action="bono.php" method="POST">
+                                <input type="hidden" name="idP" value=<?php echo $row['idpersonal'] ?>>
+                                <input type="hidden" name="nomb" value=<?php echo $row['nombre'] ?>>
+                                <input type="hidden" name="apell" value=<?php echo $row['apellido'] ?>>
+                                <input type="hidden" name="cui" value=<?php echo $row['cuil'] ?>>
+                                <button type="submit" class="btn btn-secondary bi bi-eye-fill"></button>
+                            </form>
+                        </td>
                         <td><button class="btn btn-outline-success btn-sm bi bi-file-earmark-plus-fill"
                                 data-bs-toggle="modal" data-bs-target="#subir"
                                 onclick="subirBono('<?php echo $arreglo ?>')"> Subir Bono</button></td>

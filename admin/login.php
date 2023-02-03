@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['idadmin'])) { 
-    header('Location: index_bonos.php');
+    header('Location: Home');
 }
 
 ?>
@@ -41,7 +41,7 @@ if (isset($_SESSION['idadmin'])) {
 <body>
   
 <body class="bg-light d-flex justify-content-center align-items-center vh-100 ">
-    <div class="bg-white p-5 rounded-5 text-secondary shadow " style="width: 25rem">
+    <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
         <div class="d-flex justify-content-center">
         <img class="" src="Includes/assets/GASOPEN S.A.S (1).gif" style="height: 10rem" />
         </div>

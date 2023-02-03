@@ -17,9 +17,9 @@ $datosAd = $queryBuscadm->fetch_all();
 // print $_SESSION['id'] = $datos->id;
 if ($datosAd) {
     $_SESSION['idadmin'] = $datosAd;
-   header('Location: ../index_bonos.php');
+   header('Location: ../Home');
 }else{
-    header('Location: ../login.php?mensaje=no'); 
+    header('Location: ../Login?mensaje=no'); 
 }
 
 ?>

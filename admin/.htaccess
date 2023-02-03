@@ -1,0 +1,4 @@
+RewriteEngine On 
+RewriteRule ^Home$ index_bonos.php
+RewriteRule ^Login$ login.php
+RewriteRule ^Bonos$ bono.php 
