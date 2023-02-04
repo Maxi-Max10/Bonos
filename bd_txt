@@ -8,19 +8,19 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- Schema mydb
 -- -----------------------------------------------------
 -- -----------------------------------------------------
--- Schema u404968876_base_gasopen
+-- Schema bonos_db
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema u404968876_base_gasopen
+-- Schema bonos_db
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `u404968876_base_gasopen` DEFAULT CHARACTER SET utf8 ;
-USE `u404968876_base_gasopen` ;
+CREATE SCHEMA IF NOT EXISTS `bonos_db` DEFAULT CHARACTER SET utf8 ;
+USE `bonos_db` ;
 
 -- -----------------------------------------------------
--- Table `u404968876_base_gasopen`.`admin`
+-- Table `bonos_db`.`admin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `u404968876_base_gasopen`.`admin` (
+CREATE TABLE IF NOT EXISTS `bonos_db`.`admin` (
   `idadmin` INT(11) NOT NULL AUTO_INCREMENT,
   `usuario` VARCHAR(45) NOT NULL,
   `password_admin` VARCHAR(150) NOT NULL,
@@ -31,9 +31,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `u404968876_base_gasopen`.`bonos`
+-- Table `bonos_db`.`bonos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `u404968876_base_gasopen`.`bonos` (
+CREATE TABLE IF NOT EXISTS `bonos_db`.`bonos` (
   `id_bonos` INT(11) NOT NULL AUTO_INCREMENT,
   `bonos` LONGTEXT NOT NULL,
   `fecha` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
@@ -45,9 +45,9 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `u404968876_base_gasopen`.`personal`
+-- Table `bonos_db`.`personal`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `u404968876_base_gasopen`.`personal` (
+CREATE TABLE IF NOT EXISTS `bonos_db`.`personal` (
   `idpersonal` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NOT NULL,
   `apellido` VARCHAR(45) NOT NULL,
