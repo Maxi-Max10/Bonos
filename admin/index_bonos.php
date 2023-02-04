@@ -4,7 +4,7 @@ session_start();
 
 
 if (!isset($_SESSION['idadmin'])) {
-    header('Location: login.php');
+    header('Location: Login');
   }elseif(isset($_SESSION['idadmin'])){
     include_once "Model/conexion_admin.php";
     $consulta = "SELECT * FROM personal";

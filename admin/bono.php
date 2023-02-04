@@ -3,8 +3,8 @@
 session_start();
 
 if (!isset($_SESSION['idadmin'])) {
-    header('Location: login.php');
-  }elseif(isset($_SESSION['idadmin'])){
+    header('Location: Login');
+  }else if(isset($_SESSION['idadmin'])){
     if(isset($_POST['idP'])){
         include_once "Model/conexion_admin.php";
         $idP = $_POST['idP'];
@@ -17,6 +17,7 @@ if (!isset($_SESSION['idadmin'])) {
           
       }else{
           echo "ERROR EN EL SISTEMA";
+          header('Location: Home');
       }
       
   }else{
@@ -70,11 +71,15 @@ if (!isset($_SESSION['idadmin'])) {
         <div class="container mt-3 mb-3">
             <a class="navbar-brand"><img class="" src="Includes/assets/logo gif.gif" width="35">
                 Administración</a>
-                <a href="Home" class="navbar-brand">Volver</a>
+                
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link" href="Home">Volver</a>
+                </ul>
                 <div class="navbar-nav ms-auto">
                     <a href="Controller/cerrar.php" class="nav-item nav-link bi bi-box-arrow-left"> Cerrar Sesión</a>
                 </div>
