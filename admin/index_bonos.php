@@ -294,7 +294,7 @@ if (!isset($_SESSION['idadmin'])) {
                         <td><?php echo $row['cuil']; ?></td>
                         <td><?php echo $row['password_personal']; ?></td>
                         <td class="text-center">
-                            <form action="bono.php" method="POST">
+                            <form action="Bonos" method="POST">
                                 <input type="hidden" name="idP" value=<?php echo $row['idpersonal'] ?>>
                                 <input type="hidden" name="nomb" value=<?php echo $row['nombre'] ?>>
                                 <input type="hidden" name="apell" value=<?php echo $row['apellido'] ?>>
