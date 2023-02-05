@@ -40,8 +40,8 @@ if (!isset($_SESSION['idpersonal'])) {
             <table class="mt-4 table table-striped table-hover" id="tabla_personal">
                 <thead class="table-dark">
                     <tr>
+                        <th>ID</th>
                         <th>Bono</th>
-                        <th>Fecha</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -49,10 +49,10 @@ if (!isset($_SESSION['idpersonal'])) {
                     <?php
                     while ($row = mysqli_fetch_array($resultadoUs)) { ?>
                         <tr>
+                            <td><?php echo $row['id_bonos'] ?></td>
                             <td><?php echo $row['bonos'] ?></td>
-                            <td><?php echo $row['fecha'] ?></td>
                             <td>
-                                <a href="descargar_bono.php?id=<?php echo $row['personal_idpersonal'] ?>" class="btn btn-primary "><i class="fa-solid fa-file-arrow-down "></i> Descargar</a>
+                                <a href="descargar_bono.php?id=<?php echo $row['personal_idpersonal'] ?>&bn=<?php echo $row['id_bonos'] ?>" class="btn btn-primary "><i class="fa-solid fa-file-arrow-down "></i> Descargar</a>
                             </td>
                         </tr>
                     <?php } ?>

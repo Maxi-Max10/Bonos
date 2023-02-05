@@ -113,21 +113,28 @@
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.13.1/fh-3.3.1/r-2.4.0/datatables.min.js"></script>
     <script>
-$(document).ready(function(){
-     $('#tabla_personal').DataTable({
-        language: {
-            url: '//cdn.datatables.net/plug-ins/1.13.1/i18n/es-AR.json'
-        },
-        responsive: true,
-        orderCellsTop: true,
-        fixedHeader: true
-    });
+        $(document).ready(function(){
+            $('#tabla_personal').DataTable({
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.1/i18n/es-AR.json'
+                },
+                responsive: true,
+                orderCellsTop: true,
+                fixedHeader: true,
+                scrollY: '50vh',
+                scrollCollapse: true,
+                paging: false,
+                columnDefs: [
+            {
+                targets: [0,1],
+                orderData: [0, 1],
+                "targets":2,
+                "orderable": false
+            }]
 
-});
+            });
 
-
- 
-
+        });
 </script>
 </body>
 
