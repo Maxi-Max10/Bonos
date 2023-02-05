@@ -8,10 +8,10 @@ if (isset($_GET['id'])) {
     $result = mysqli_query($conexionUs, $query);
     
     while ($row = mysqli_fetch_array($result)) {
-        $idbono = $row['bonos'];
+        $nombreBono = $row['bonos'];
     }
         $row = mysqli_fetch_array($result);
-        $enlace = "admin/Controller/files/".$row['bonos'];
+        $enlace = "admin/Controller/files/".$nombreBono;
         $basefichero = basename($enlace);
 
         header("Content-Type: application/force-download");

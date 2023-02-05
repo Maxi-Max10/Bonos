@@ -11,7 +11,7 @@ if (!isset($_SESSION['idpersonal'])) {
     $idpersonal = $_SESSION['idpersonal'];
 
 
-    $consultaUs = "SELECT * FROM bonos WHERE personal_idpersonal = '".$idpersonal."'";
+    $consultaUs = "SELECT * FROM bonos WHERE personal_idpersonal = '".$idpersonal."' ORDER BY id_bonos DESC";
     $resultadoUs = mysqli_query($conexionUs, $consultaUs);
 } else {
     echo "ERROR EN EL SISTEMA";
@@ -40,7 +40,7 @@ if (!isset($_SESSION['idpersonal'])) {
             <table class="mt-4 table table-striped table-hover" id="tabla_personal">
                 <thead class="table-dark">
                     <tr>
-                        <th>ID</th>
+                        <th>#</th>
                         <th>Bono</th>
                         <th>Acciones</th>
                     </tr>
