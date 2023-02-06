@@ -36,7 +36,7 @@ if (!isset($_SESSION['idpersonal'])) {
 </nav>
 <div class="container altura p-4">
     <div class="row">
-        <div class="table-responsive">
+        <div class="table-responsive altura mt-4 mb-5">
             <table class="mt-4 table table-striped table-hover" id="tabla_personal">
                 <thead class="table-dark">
                     <tr>
@@ -59,6 +59,6 @@ if (!isset($_SESSION['idpersonal'])) {
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> 
 </div>
 <?php include("View/footer.php") ?>
