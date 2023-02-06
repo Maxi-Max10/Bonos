@@ -14,7 +14,7 @@
 }
 
 svg{
-  width: 500px;
+  width: 250px;
   height: 35px;
   display: block;
   position: relative;
@@ -24,9 +24,12 @@ svg{
 }
 
 footer {
-  padding: 2em 0; }
+  padding: 2em 0; 
+  margin-top: 300px;
+}
 
 .footer-07 {
+  margin-top: 300px;
   background: #121212; }
   .footer-07 a {
     color: #a3de83; }
@@ -71,7 +74,8 @@ footer {
           transform: translate(-50%, -50%); }
         .ftco-footer-social li a:hover {
           color: #fff; }
-          text {
-            font-size: 80px !important;
-            width: 500P !important;
-          }
+    
+text {
+  font-size: 80px !important;
+  width: 500P !important;
+}

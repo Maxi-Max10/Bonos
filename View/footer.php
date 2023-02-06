@@ -1,5 +1,5 @@
          <!--  footer -->
-    <footer class="footer-07 mt-5">
+    <footer class="footer-07 mt-5 animac">
     <div class="container">
     <div class="row justify-content-center">
     <div class="col-md-12 text-center">
